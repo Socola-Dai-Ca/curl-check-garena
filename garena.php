@@ -28,7 +28,7 @@ $curl->reset();
 
 // Thông nát garena
 $curl->setHeader('X-Requested-With', 'XMLHttpRequest');
-$curl->get('https://sso.garena.com/api/login?account=' . $user . '&password=' . $pass . '&redirect_uri=https%3A%2F%2Faccount.garena.com%2F&format=json&id=' . $token['id'] . '&app_id=10100');
+$curl->get('https://sso.garena.com/api/login?account=' . $token['acccount'] . '&password=' . $pass . '&redirect_uri=https%3A%2F%2Faccount.garena.com%2F&format=json&id=' . $token['id'] . '&app_id=10100');
 
 $data = json_decode($curl->response, true);
 
@@ -40,7 +40,6 @@ if ($data['uid']) {
 }
 
 $curl->close();
-
 
 
 
